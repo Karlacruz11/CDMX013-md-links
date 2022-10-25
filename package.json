@@ -1,7 +1,37 @@
 {
-  "name": "md-links",
+  "name": "karlacruz11-md-links",
   "version": "0.1.0",
   "engines": {
     "node": ">=16.x"
+  },
+  "scripts": {
+    "eslint": "eslint --ext .js src/ test/",
+    "test": "jest --coverage"
+  },
+  "description": "libreria para validar links y obtener estadisticas",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karlacruz11/CDMX013-md-links.git"
+  },
+  "keywords": [
+    "markdown"
+  ],
+  "author": "KarlaCruz",
+  "license": "MIT",
+  "bin": {
+    "md-links": "cli.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Karlacruz11/CDMX013-md-links/issues"
+  },
+  "homepage": "https://github.com/Karlacruz11/CDMX013-md-links#readme",
+  "dependencies": {
+    "@types/marked": "^4.0.7",
+    "marked": "^4.1.1",
+    "node-fetch": "^2.6.7"
   }
 }
