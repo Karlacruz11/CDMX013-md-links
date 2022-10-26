@@ -63,23 +63,11 @@ const validarLinks = (arrLinks) => {
     })
   );
 };
-//Obtiene el total de links 
-const totalLinks = (ruta) => {
-  const total = validarLinks(ruta); //promise
-  total.then((allLinks) => {
-    const todos = allLinks.map((linksHref) => linksHref.href).length;
-    console.log("TOTAL", todos);
-    const stats = `total: ${todos}`;
-    console.log(stats);
-  });
-  //console.log(todos +'holis');
-};
 
-totalLinks(ruta);
 module.exports = {
   existeRuta,
   leerExt,
   esrutaAbs,
-  totalLinks,
-  validarLinks,
+  validarLinks, 
+  guardarLinks,
 };

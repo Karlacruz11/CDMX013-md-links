@@ -3,7 +3,8 @@ const funciones = require('./api.js');
   return promesa = new Promise((resolve) => {
     if(options.validate === true){
       resolve(funciones.validarLinks(ruta));
-    }else{
+      //console.log('SI LLEGA AQUI');
+    }else {
       resolve(funciones.guardarLinks(ruta));
     }
   });
@@ -11,8 +12,3 @@ const funciones = require('./api.js');
 
 module.exports ={mdLinks};
 
-//module.exports = () => {
-  
-  // ...
-//};
-//console.log('Holis');
