@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const marked = require("marked");
 const fetch = require("node-fetch");
-let ruta = process.argv[2];
+//let ruta = process.argv[2];
 
 const existeRuta = (ruta) => {
   if (fs.existsSync(ruta)) {

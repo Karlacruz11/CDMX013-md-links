@@ -1,33 +1,34 @@
 const {mdLinks} = require('./index');
 const stats = require('./stats');
+const chalk = require('chalk');
 const funciones = require('./api');
 
 const clifuncion =(path,opcionUno, opcionDos)=> {
     if(opcionUno === '--validate' && opcionDos === '--stats' || opcionUno === '--stats' && opcionDos === '--validate'){
         return mdLinks(path, {validate:true}).then((resultado) =>{
-           const retorno= `${stats.totalLinks(resultado)}\n${stats.broken(resultado)}\n`;
+           const retorno= `${chalk.yellow(stats.totalLinks(resultado))}\n ${chalk.magenta(stats.uniqueLinks(resultado))}\n${chalk.red(stats.broken(resultado))}\n`;
            return retorno;
         });
     }else if(opcionUno === '--validate'){
         return mdLinks(path, {validate:true}).then(resultado => {
            return resultado.map(agrega =>(`
-                href: ${agrega.href}
-                text: ${agrega.text}
-                file: ${agrega.file}
-                valida: ${agrega.statusMessage}
-                status: ${agrega.status}\n`)).join('');
+                href: ${chalk.gray.underline(agrega.href)}
+                text: ${chalk.gray(agrega.text)}
+                file: ${chalk.gray(agrega.file)}
+                valida: ${chalk.blue(agrega.statusMessage)}
+                status: ${chalk.blue(agrega.status)}\n`)).join('');
             });
     
         }else if(opcionUno === '--stats'){
         return mdLinks(path, {validate:true}).then((resultado)=>{
-             return stats.totalLinks(resultado);
+             return chalk.yellow(stats.totalLinks(resultado))+ chalk.magenta(stats.uniqueLinks(resultado));
         });
     } 
     return mdLinks(path , {validate: false}).then(resultado=> {
        return resultado.map(file =>(`
-                href: ${file.href}
-                text: ${file.text}
-                file: ${file.file}\n`)).join('');
+                href: ${chalk.gray.underline(file.href)}
+                text: ${chalk.gray(file.text)}
+                file: ${chalk.gray(file.file)}\n`)).join('');
         });
        
     };

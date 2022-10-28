@@ -11,7 +11,7 @@
   "description": "libreria para validar links y obtener estadisticas",
   "main": "index.js",
   "directories": {
-    "test": "test"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,11 @@
   "homepage": "https://github.com/Karlacruz11/CDMX013-md-links#readme",
   "dependencies": {
     "@types/marked": "^4.0.7",
+    "chalk": "^4.1.2",
     "marked": "^4.1.1",
     "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "jest": "^29.2.2"
   }
 }
