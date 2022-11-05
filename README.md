@@ -6,6 +6,8 @@
 * [2. Resumen del proyecto](#2-resumen)
 * [3. Diagrama de flujo](#3-diagrama-de-flujo)
 * [4. Instalación y guía de uso](#4-instalación-y-guía-de-uso)
+  * [4.1 Instalación](#41-instalación)
+  * [4.2 Guía de uso](#42-Guía-de-uso)
 * [5. Herramiengtas usadas](#5-herramientas-usadas)
 
 
@@ -23,7 +25,7 @@ Es una librería creada a través de [Node.js](https://nodejs.org/), que partien
 
 ## 3. Diagrama de Flujo 
 
-Para plantear mejor la solución al problema se definió el plan a seguir mediante un diagrama de flujo en el que se plasmó el funcionamiento de la librería.
+Para plantear mejor la solución al problema se definió el plan a seguir mediante un [diagrama de flujo](https://www.figma.com/file/6GzhK3qI21dFnacUxlyjJh/MDlinks?node-id=0%3A1) en el que se plasmó el funcionamiento de la librería.
 ![Diagrama](./image/MDlinks.png)
 
 ## 4. Instalación y guía de uso 
@@ -40,7 +42,7 @@ para usarlo programáticamente.
 
 ### 4.2 Guía de uso
 
-Para ejecutarlo en la terminal es necesario escribir argumentos como;  md-Links <path> [options].
+Para ejecutarlo en la terminal es necesario escribir argumentos como;  md-Links [path] [options].
 <path> es la ruta del archivo md o del directorio que contiene archivos md, seguido del argumento `options` este es opcional ya sea que elija --validate, --stats o ambas opciones de los links encontrados en archivos md. 
  
  **A continuación se muestran unos ejemplos:**
