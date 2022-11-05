@@ -5,11 +5,13 @@ const funciones = require('./api');
 
 const clifuncion =(path,opcionUno, opcionDos)=> {
     if(opcionUno === '--validate' && opcionDos === '--stats' || opcionUno === '--stats' && opcionDos === '--validate'){
+        console.log(chalk.yellow.bold.bgBlueBright('\nLinks found in md file(s):\n'));
         return mdLinks(path, {validate:true}).then((resultado) =>{
-           const retorno= `${chalk.yellow(stats.totalLinks(resultado))}\n ${chalk.magenta(stats.uniqueLinks(resultado))}\n${chalk.red(stats.broken(resultado))}\n`;
+           const retorno= `${chalk.yellow(stats.totalLinks(resultado))}\n${chalk.magenta(stats.uniqueLinks(resultado))}\n${chalk.red(stats.broken(resultado))}\n`;
            return retorno;
         });
     }else if(opcionUno === '--validate'){
+             console.log(chalk.yellow.bold.bgBlueBright('\nStatus of each link found in the md file(s):\n'));
         return mdLinks(path, {validate:true}).then(resultado => {
            return resultado.map(agrega =>(`
                 href: ${chalk.gray.underline(agrega.href)}
@@ -20,10 +22,13 @@ const clifuncion =(path,opcionUno, opcionDos)=> {
             });
     
         }else if(opcionUno === '--stats'){
+        console.log(chalk.yellow.bold.bgBlueBright('\nLinks found in md file(s):\n'));
         return mdLinks(path, {validate:true}).then((resultado)=>{
-             return chalk.yellow(stats.totalLinks(resultado))+ chalk.magenta(stats.uniqueLinks(resultado));
+             return chalk.yellow(stats.totalLinks(resultado)) + "\n" +
+                    chalk.magenta(stats.uniqueLinks(resultado));
         });
     } 
+    console.log(chalk.yellow.bold.bgBlueBright('\nLinks found in md file(s):\n'));
     return mdLinks(path , {validate: false}).then(resultado=> {
        return resultado.map(file =>(`
                 href: ${chalk.gray.underline(file.href)}

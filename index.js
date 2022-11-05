@@ -5,7 +5,7 @@ const funciones = require('./api.js');
     if(options.validate === true){
       resolve(validarLinks(funciones.guardarLinks(ruta)));
       //console.log('SI LLEGA AQUI');
-    }else {
+    }else if(options.validate === false){
       resolve(funciones.guardarLinks(ruta));
     }
   });

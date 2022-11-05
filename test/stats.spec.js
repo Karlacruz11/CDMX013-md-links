@@ -1,6 +1,6 @@
 const stats = require ('../stats.js');
 const { outputFail } = require('./mockData.js');
-//const { output } = require('./mockData.js');
+
 
 const input = [{
     href: 'https://github.com/maxogden/art-of-node#understanding-node',
@@ -13,10 +13,9 @@ const input = [{
 
 describe('funcion totallinks', () => {
 
-    it('should a function', () => {
+    it('Es una funcion', () => {
       expect(typeof stats.totalLinks).toBe('function');
       expect(typeof stats.totalLinks).not.toBe('String');
-      //console.log('FIX ME!');
     });
     it('verifica la cantidad de links totales,', ()=> {
         expect(stats.totalLinks(input)).toBe(`Total: 1`);
@@ -33,6 +32,6 @@ describe('Unique links', () => {
 describe('Broken links', () => {
 
     it('verifica la cantidad de links  rotos,', ()=> {
-        expect(stats.broken(outputFail)).toBe(`Broken: 2`);
+        expect(stats.broken(outputFail)).toEqual(`Broken: 2`);
     });
 });

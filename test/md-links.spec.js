@@ -9,18 +9,13 @@ describe('funcion validar links', () => {
     expect(typeof validarLinks).not.toBe('String');
     //console.log('FIX ME!');
   });
-//  it('verifica los links --validate', (done) => {
-//   validarLinks(mocks.input).then((resultado) =>{
-//     expect(resultado).toEqual(mocks.output);
-//     done();
-//   });
-//  });
+
 it('verifica los links --validate', ()=> {
      return (validarLinks(mocks.input)).then((resultado) =>{
       expect(resultado).toEqual(mocks.output);
     })
    });
-   
+
 });
 
 
